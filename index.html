@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="论文主页">
+  <meta name="keywords" content="论文, 研究, 学术">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MDTeamGPT - Paper</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro|Montserrat:400,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --light-bg: #f8f9fa;
+    }
+
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      color: #333;
+    }
+
+    .publication-title {
+      font-family: 'Montserrat', 'Google Sans', sans-serif;
+      background: linear-gradient(90deg, #2c3e50, #3498db);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .hero-body {
+      padding: 5rem 1.5rem 2rem;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240,240,245,0.95) 100%);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      border-radius: 0 0 30px 30px;
+    }
+
+    .section {
+      padding: 3rem 1.5rem;
+    }
+
+    .image-container {
+      margin: 3rem 0;
+      text-align: center;
+      perspective: 1000px;
+      transition: all 0.5s ease;
+    }
+
+    .image-container img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      transition: all 0.5s ease;
+      transform: rotateX(2deg);
+    }
+
+    .image-container:hover img {
+      transform: rotateX(0deg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+
+    .external-link {
+      margin: 0 0.5rem;
+    }
+
+    .footer {
+      padding: 2rem 1.5rem;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 30px 30px 0 0;
+      margin-top: 3rem;
+    }
+
+    .authors {
+      font-size: 18px;
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #555;
+    }
+
+    .affiliations {
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      color: #666;
+    }
+
+    .paper-btn {
+      display: inline-block;
+      background-color: #24292e;
+      color: white;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .paper-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 7px 10px rgba(0,0,0,0.2);
+      color: white;
+    }
+
+    .paper-btn i {
+      margin-right: 8px;
+    }
+
+    .buttons-container {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .abstract-container {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .abstract-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+    }
+
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 50px;
+      height: 4px;
+      background: var(--secondary-color);
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .publication-title {
+        font-size: 28px !important;
+      }
+      .image-container img {
+        max-width: 100%;
+      }
+      .abstract-container {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title" style="font-size: 36px;">
+              <span style="font-weight: bold;">MDTeamGPT:</span>
+              A Self-Evolving LLM-based Multi-Agent Framework for Multi-Disciplinary Team Medical Consultation
+            </h1>
+            <div class="authors">
+              Kai Chen<sup>1</sup>, Xinfeng Li<sup>2</sup>, Tianpei Yang<sup>1</sup>, Hewei Wang<sup>3</sup>, Wei Dong<sup>2</sup>, Yang Gao<sup>1</sup>
+            </div>
+            <div class="affiliations">
+              <sup>1</sup> State Key Laboratory for Novel Software Technology, Nanjing University, Nanjing<br>
+              <sup>2</sup> Nanyang Technological University<br>
+              <sup>3</sup> Carnegie Mellon University
+            </div>
+
+            <div class="buttons-container">
+              <a href="#" class="paper-btn">
+                <i class="fas fa-file-pdf"></i> Paper
+              </a>
+              <a href="#" class="paper-btn">
+                <i class="ai ai-arxiv"></i> arXiv
+              </a>
+              <a href="#" class="paper-btn">
+                <i class="fab fa-github"></i> Code (coming soon)
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="image-container">
+        <img src="acl1_00.jpg" alt="研究方法图示">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <div class="abstract-container">
+            <h2 class="title is-3 section-title">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Large Language Models (LLMs) have made significant progress in various fields. However, challenges remain in Multi-Disciplinary Team (MDT) medical consultations. Current research enhances reasoning through role assignment, task decomposition, and accumulation of medical experience. Multi-role collaboration in MDT consultations often results in excessively long dialogue histories. This increases the model's cognitive burden and degrades both efficiency and accuracy. Some methods only store treatment histories. They do not extract effective experience or reflect on errors. This limits knowledge generalization and system evolution.
+              </p>
+              <p>
+                We propose a multi-agent MDT medical consultation framework based on LLMs to address these issues. Our framework uses consensus aggregation and a residual discussion structure for multi-round consultations. It also employs a Correct Answer Knowledge Base (CorrectKB) and a Chain-of-Thought Knowledge Base (ChainKB) to accumulate consultation experience. These mechanisms enable the framework to evolve and continually improve diagnosis rationality and accuracy. Experimental results on the MedQA and PubMedQA datasets demonstrate that our framework achieves accuracies of 90.1% and 83.9%, respectively, and that the constructed knowledge bases generalize effectively across test sets from both datasets.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title has-text-centered">Experimental Results</h2>
+      <div class="image-container">
+        <img src="exp.jpg" alt="实验结果图示">
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p>
+              © 2025 All Rights Reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 添加图片悬停效果
+    document.addEventListener('DOMContentLoaded', function() {
+      const images = document.querySelectorAll('.image-container img');
+      images.forEach(img => {
+        img.addEventListener('mouseenter', function() {
+          this.style.transform = 'rotateX(0deg) scale(1.02)';
+        });
+        img.addEventListener('mouseleave', function() {
+          this.style.transform = 'rotateX(2deg) scale(1)';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
